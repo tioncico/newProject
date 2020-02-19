@@ -29,6 +29,7 @@ class ArticleTest extends AdminBaseTestCase
         'author'                => 'blank',
         'content'               => 'Article测试',
         'state'                 => 1,
+        'note'                 => '测试',
     ];
 
     protected $search = [
@@ -40,6 +41,7 @@ class ArticleTest extends AdminBaseTestCase
         'author'                => 'blank',
         'content'               => 'Article测试12',
         'state'                 => 1,
+        'note'                 => '测试2',
     ];
 
     function setUp(): void
@@ -75,7 +77,6 @@ class ArticleTest extends AdminBaseTestCase
         $url = $this->apiBase . '/'.$this->modelName.'/add';
         $curl = $this->curl;
         $data = $this->addParam + ['categoryId' => self::$category->categoryId];
-        var_dump($data);
         $curl->get($url, $data);
         if ($curl->response) {
 //            var_dump($curl->response);

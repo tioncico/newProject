@@ -9,22 +9,24 @@
 namespace Test\Admin;
 
 use App\Model\Article\ArticleModel;
+use App\Model\WebSettingModel;
 
-class ArticleCategoryTest extends AdminBaseTestCase
+class WebSettingTest extends AdminBaseTestCase
 {
     /**
-     * @var $info ArticleModel
+     * @var $info WebSettingModel
      */
     static $info;
-    protected $modelName = 'ArticleCategory';
-    protected $primaryKey = 'categoryId';
+    protected $modelName = 'WebSetting';
+    protected $primaryKey = 'id';
     protected $addParam = [
-        'categoryName'  => 'ArticleCategory测试',
-        'pid'           => 0,
-        'note'           => '测试',
+        'name'  => 'web_name',
+        'note'  => '测试',
+        'value'  => '测试官网',
+        'type'  => WebSettingModel::TYPE_TEXT,
     ];
     protected $updateParam = [
-        'categoryName'             => 'ArticleCategory测试12',
+        'note'             => '测试2',
     ];
 
     function setUp(): void
@@ -71,7 +73,7 @@ class ArticleCategoryTest extends AdminBaseTestCase
         $this->assertEquals('success',$curl->response->msg);
         $this->assertEquals(200, $curl->response->code);
         $this->assertGreaterThan(0, $curl->response->result->total);
-        self::$info = new ArticleModel((array) $curl->response->result->list[0]);
+        self::$info = new WebSettingModel((array) $curl->response->result->list[0]);
     }
 
     /**
@@ -123,8 +125,8 @@ class ArticleCategoryTest extends AdminBaseTestCase
         $this->assertEquals(200, $curl->response->code);
     }
 
-    public function getArticleList() {
-        $model = new ArticleModel();
+    public function getList() {
+        $model = new WebSettingModel();
         $primaryKey = $this->primaryKey;
         return $model->where([$primaryKey => self::$info->$primaryKey = $this->primaryKey])->all(null, true);
     }
@@ -150,7 +152,7 @@ class ArticleCategoryTest extends AdminBaseTestCase
             echo 'Error: ' . $curl->errorCode . ': ' . $curl->errorMessage . "\n";
         }
         $this->assertTrue(!!$curl->response);
-        $list = $this->getArticleList();
+        $list = $this->getList();
         if (!empty($list)) {
             $this->assertEquals('该分类存在文章', $curl->response->msg);
             $this->assertEquals(400, $curl->response->code);

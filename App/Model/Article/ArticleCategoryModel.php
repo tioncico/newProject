@@ -7,6 +7,7 @@ namespace App\Model\Article;
  * @property $categoryId;
  * @property $categoryName;
  * @property $pid;
+ * @property $note;
  * Create With Automatic Generator
  */
 class  ArticleCategoryModel extends \App\Model\Model

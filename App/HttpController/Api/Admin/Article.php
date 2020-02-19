@@ -30,6 +30,7 @@ class Article extends BaseController
      * @Param(name="author", alias="作者", required="", lengthMax="32")
      * @Param(name="content", alias="内容", optional="")
      * @Param(name="state", alias="状态", optional="", inArray="{1, 2}")
+     * @Param(name="note", alias="文章备注", optional="")
      * @apiParam {String} adminSession 权限验证token
 	 * @apiParam {int} categoryId 分类id
 	 * @apiParam {string} title 标题
@@ -37,6 +38,7 @@ class Article extends BaseController
 	 * @apiParam {string} author 作者
      * @apiParam {string} [imgUrl] 缩略图
      * @apiParam {string} [content] 内容
+     * @apiParam {string} [note] 文章备注
 	 * @apiParam {int} state 状态 1正常,2隐藏
 	 * @apiSuccess {Number} code
 	 * @apiSuccess {Object[]} data
@@ -67,6 +69,7 @@ class Article extends BaseController
             'imgUrl' => OssFileService::moveFile($param['imgUrl'], $this->storageName),
             'description' => $param['description']??'',
             'author' => $param['author']??'',
+            'note' => $param['note']??'',
             'content' => $content ?? '',
             'addTime' => time(),
             'state' => $param['state'] ?? 1
@@ -105,6 +108,7 @@ class Article extends BaseController
      * @Param(name="author", alias="作者", optional="", lengthMax="32")
      * @Param(name="content", alias="内容", optional="")
      * @Param(name="state", alias="状态", optional="", inArray="{1, 2}")
+     * @Param(name="note", alias="文章备注", optional="")
      * @apiParam {String} adminSession 权限验证token
 	 * @apiParam {int} articleId 文章id
 	 * @apiParam {int} [categoryId] 分类id
@@ -114,7 +118,8 @@ class Article extends BaseController
      * @apiParam {string} [description] 简介
 	 * @apiParam {string} [author] 作者
 	 * @apiParam {string} [content] 内容
-	 * @apiParam {int} [state] 状态 1正常,2隐藏
+     * @apiParam {string} [note] 文章备注
+     * @apiParam {int} [state] 状态 1正常,2隐藏
 	 * @apiSuccess {Number} code
 	 * @apiSuccess {Object[]} data
 	 * @apiSuccess {String} msg

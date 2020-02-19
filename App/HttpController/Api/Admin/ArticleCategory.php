@@ -4,6 +4,7 @@ namespace App\HttpController\Api\Admin;
 
 use App\Model\Article\ArticleCategoryModel;
 use App\Service\Admin\ArticleCategoryService;
+use EasySwoole\Http\Annotation\Param;
 use EasySwoole\Http\Message\Status;
 use LogicAssert\Assert;
 
@@ -21,9 +22,11 @@ class ArticleCategory extends BaseController
 	 * @apiDescription 新增文章分类
      * @Param(name="categoryName", alias="分类名称", required="", lengthMax="64")
      * @Param(name="pid", alias="父级分类id", required="", integer="")
+     * @Param(name="note", alias="分类备注", optional="")
      * @apiParam {String} adminSession 权限验证token
 	 * @apiParam {string} categoryName 分类名称
 	 * @apiParam {int} pid 父级分类id
+	 * @apiParam {int} [note] 分类备注
 	 * @apiSuccess {Number} code
 	 * @apiSuccess {Object[]} data
 	 * @apiSuccess {String} msg
@@ -38,7 +41,8 @@ class ArticleCategory extends BaseController
 		$model = new ArticleCategoryModel();
 		$data = [
 		    'categoryName' => $param['categoryName'],
-            'pid' => $param['pid']
+            'pid' => $param['pid'],
+            'note' => $param['note'],
         ];
         $model = $model::create($data);
 		$rs = $model->save();
@@ -58,10 +62,12 @@ class ArticleCategory extends BaseController
      * @Param(name="categoryId", alias="文章分类id", required="", integer="")
      * @Param(name="categoryName", alias="分类名称", optional="", lengthMax="64")
      * @Param(name="pid", alias="父级分类id", optional="", integer="")
+     * @Param(name="note", alias="分类备注", optional="")
      * @apiParam {String} adminSession 权限验证token
 	 * @apiParam {int} categoryId 文章分类id
 	 * @apiParam {string} [categoryName] 分类名称
 	 * @apiParam {int} [pid] 父级分类id
+	 * @apiParam {int} [note] 分类备注
 	 * @apiSuccess {Number} code
 	 * @apiSuccess {Object[]} data
 	 * @apiSuccess {String} msg
@@ -81,7 +87,8 @@ class ArticleCategory extends BaseController
         }
 		$data = [
 		    'categoryName' => $param['categoryName'] ?? $model->categoryName,
-            'pid' => $param['categoryName'] ?? $model->categoryName
+            'pid' => $param['categoryName'] ?? $model->categoryName,
+            'note' => $param['note']??$model->note,
         ];
         $result = $model->update($data);
 

@@ -18,6 +18,7 @@ use App\Model\Model;
  * @property $addTime;
  * @property $updateTime;
  * @property $state;
+ * @property $note;
  * Create With Automatic Generator
  */
 class ArticleModel extends Model
