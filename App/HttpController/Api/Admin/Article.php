@@ -15,8 +15,6 @@ use LogicAssert\Assert;
  */
 class Article extends BaseController
 {
-    protected $storageName = 'Article';
-
 	/**
 	 * @api {get|post} /Api/Admin/Article/add
 	 * @apiName add article
@@ -57,16 +55,13 @@ class Article extends BaseController
 
 		$model = new ArticleModel();
 
-        // 存放移动之后的图片路径
-        $data = $this->getFiles();
-        $files = $data['files'];
-        $content = $data['content'];
+        $content = $param['content'];
 
 		$data = [
 		    'categoryId' => $param['categoryId'],
             'categoryName' => $category->categoryName,
             'title' => $param['title'],
-            'imgUrl' => OssFileService::moveFile($param['imgUrl'], $this->storageName),
+            'imgUrl' => $param['imgUrl']??'',
             'description' => $param['description']??'',
             'author' => $param['author']??'',
             'note' => $param['note']??'',
@@ -74,21 +69,11 @@ class Article extends BaseController
             'addTime' => time(),
             'state' => $param['state'] ?? 1
         ];
-        if (!empty($param['imgUrl'])) {
-            $data['imgUrl'] = OssFileService::moveFile($param['imgUrl'], $this->storageName);
-        }
 		$rs = $model::create($data)->save();
 
 		if ($rs) {
 		    $this->writeJson(Status::CODE_OK, null, "success");
 		} else {
-            if (!empty($param['imgUrl'])) {
-                OssFileService::delete($data['imgUrl']);
-            }
-		    foreach ($files as $file) {
-                OssFileService::delete($file);
-            }
-
 		    $this->writeJson(Status::CODE_BAD_REQUEST, [], $model->lastQueryResult()->getLastError());
 		}
 	}
@@ -135,14 +120,11 @@ class Article extends BaseController
         $model = $model->get($param['articleId']);
         Assert::assertTrue(!!$model, '该数据不存在');
 
-        // 存放移动之后的图片路径
-        $data = $this->getFiles();
-        $files = $data['files'];
-        $content = $data['content'];
+        $content = $param['content'];
 
 		$data = [
 		    'title' => $param['title'] ?? $model->title,
-            'imgUrl' => isset($param['imgUrl']) ? OssFileService::moveFile($param['imgUrl'], $this->storageName) : $model->imgUrl,
+            'imgUrl' => isset($param['imgUrl']) ? $param['imgUrl']: $model->imgUrl,
             'description' => $param['description'] ?? $model->description,
             'author' => $param['author'] ?? $model->author,
             'content' => $content ?? $model->content,
@@ -156,20 +138,10 @@ class Article extends BaseController
             $data['categoryId'] = $param['categoryId'];
             $data['categoryName'] = $category->categoryName;
         }
-        if (!empty($param['imgUrl'])) {
-            $data['imgUrl'] = OssFileService::moveFile($param['imgUrl'], $this->storageName);
-        }
 		$rs = $model->update($data);
 		if ($rs) {
 		    $this->writeJson(Status::CODE_OK, $rs, "success");
 		} else {
-            if (!empty($param['imgUrl'])) {
-                OssFileService::delete($data['imgUrl']);
-            }
-            foreach ($files as $file) {
-                OssFileService::delete($file);
-            }
-
 		    $this->writeJson(Status::CODE_BAD_REQUEST, [], $model->lastQueryResult()->getLastError());
 		}
 	}
@@ -298,28 +270,6 @@ class Article extends BaseController
 
         $this->writeJson(Status::CODE_OK, [], "success");
 	}
-
-    /**
-     * 获取文本上传图片迁移数组数据
-     * @return array
-     */
-	private function getFiles() {
-	    $param = $this->request()->getRequestParam();
-        $files = [];
-        $content = $param['content'];
-        if (!empty($param['content'])) {
-            preg_match_all('/src="(.*?)"/', $content, $matches);
-            foreach ($matches[1] as $match) {
-                $path = OssFileService::moveFile($match, $this->storageName);
-                if ($path !== $match) {
-                    $files[] = $path;
-                    $content = str_replace($match, $path, $content);
-                }
-            }
-            $param['content'] = $content;
-        }
-        return ['content' => $content, 'files' => $files];
-    }
 
 }
 
