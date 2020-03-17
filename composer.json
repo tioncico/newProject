@@ -1,7 +1,7 @@
 {
   "require": {
     "easyswoole/easyswoole": "3.3.2",
-    "easyswoole/http": "1.4.1",
+    "easyswoole/http": "^1.5",
     "easyswoole/verifycode": "3.x",
     "easyswoole/phpunit": "^1.0",
     "php-curl-class/php-curl-class": "^8.5",
@@ -15,7 +15,8 @@
     "tioncico/curd-automatic-generation": "^2.0",
     "easyswoole/orm": "^1.0.19",
     "easyswoole/pay": "^1.2",
-    "easyswoole/wechat": "^1.0"
+    "easyswoole/wechat": "^1.0",
+    "easyswoole/http-annotation": "^1.0"
   },
   "autoload": {
     "psr-4": {

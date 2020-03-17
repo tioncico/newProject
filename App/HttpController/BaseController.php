@@ -3,9 +3,8 @@
 
 namespace App\HttpController;
 
-
+use EasySwoole\HttpAnnotation\AnnotationController;
 use EasySwoole\EasySwoole\ServerManager;
-use EasySwoole\Http\AbstractInterface\AnnotationController;
 
 class BaseController extends AnnotationController
 {
