@@ -5,17 +5,36 @@ namespace App\HttpController;
 
 
 use EasySwoole\Http\AbstractInterface\Controller;
+use EasySwoole\HttpAnnotation\Utility\AnnotationDoc;
 
 class Index extends Controller
 {
-
-    public function index()
+    function userDoc()
     {
-        $file = EASYSWOOLE_ROOT.'/vendor/easyswoole/easyswoole/src/Resource/Http/welcome.html';
-        if(!is_file($file)){
-            $file = EASYSWOOLE_ROOT.'/src/Resource/Http/welcome.html';
-        }
-        $this->response()->write(file_get_contents($file));
+        $parser = new AnnotationDoc();
+        $string = $parser->scan2Html(EASYSWOOLE_ROOT.'/App/HttpController/Api/User');
+        $this->response()->withAddedHeader('Content-type',"text/html;charset=utf-8");
+        $this->response()->write($string);
+    }
+    function commonDoc()
+    {
+        $parser = new AnnotationDoc();
+        $string = $parser->scan2Html(EASYSWOOLE_ROOT.'/App/HttpController/Api/Common');
+        $this->response()->withAddedHeader('Content-type',"text/html;charset=utf-8");
+        $this->response()->write($string);
+    }
+
+    function adminDoc()
+    {
+        $parser = new AnnotationDoc();
+        $string = $parser->scan2Html(EASYSWOOLE_ROOT.'/App/HttpController/Api/Admin');
+        $this->response()->withAddedHeader('Content-type',"text/html");
+        $this->response()->write($string);
+    }
+
+    function index()
+    {
+        $this->response()->redirect('/userDoc');
     }
 
     function test()
