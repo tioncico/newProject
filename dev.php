@@ -1,6 +1,10 @@
 <?php
 return [
     'SERVER_NAME' => "EasySwoole",
+    'WEB'         => [ //web配置项
+        'SSL'  => false,
+        'HOST' => 'test.php20.cn',
+    ],
     'MAIN_SERVER' => [
         'LISTEN_ADDRESS' => '0.0.0.0',
         'PORT'           => 9501,
@@ -21,7 +25,7 @@ return [
     ],
     'TEMP_DIR'    => null,
     'LOG_DIR'     => null,
-    "MYSQL"       => [
+    "MYSQL"       => [//mysql
         'host'     => '127.0.0.1',
         'port'     => 3306,
         'user'     => 'root',
@@ -29,8 +33,17 @@ return [
         'database' => 'test',
         'charset'  => 'utf8mb4',
     ],
-    "REDIS"       => [
+    "REDIS"       => [//redis
         'host' => '127.0.0.1',
         'port' => 6379,
+    ],
+    "ALI_OSS"     => [//阿里云oss
+        "KEY"       => '213',
+        "BUCKET"    => 'fs-213',
+        "SECRET"    => '213',
+        "END_POINT" => 'oss-cn-beijing.aliyuncs.com',
+        "REGION"    => 'cn-hangzhou',//sts相关配置
+        "HOST"      => 'http://fs-123.oss-cn-beijing.aliyuncs.com',
+        "ROLE_ARN"  => 'acs:ram::123:role/aliyunosstokengeneratorrole'//sts相关配置
     ],
 ];
