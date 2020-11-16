@@ -31,6 +31,7 @@ class UserBase extends ApiBase
         if (parent::onRequest($action) === false) {
             return false;
         }
+
         if (!in_array($action, $this->noneAuthAction) && !$this->who()) {
             $this->writeJson(Status::CODE_UNAUTHORIZED, null, '请登录');
             return false;

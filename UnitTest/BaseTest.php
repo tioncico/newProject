@@ -21,7 +21,7 @@ class BaseTest extends TestCase
 
     function getApiUrl($action, ?string $modelName = null)
     {
-        return "{$this->apiHost}{$this->apiBase}" . ($modelName ?? $this->modelName)."/{$action}";
+        return "{$this->apiHost}{$this->apiBase}/" . ($modelName ?? $this->modelName)."/{$action}";
     }
 
     protected function request($action, $data = [], $modelName = null)

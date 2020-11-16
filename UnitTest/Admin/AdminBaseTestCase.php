@@ -70,7 +70,9 @@ class AdminBaseTestCase extends BaseTest
     {
         $this->curl->setCookies([
             AdminBase::ADMIN_TOKEN_NAME => $this->userSession,
-        ]);
+        ]);var_dump([
+        AdminBase::ADMIN_TOKEN_NAME => $this->userSession,
+    ]);
     }
 
     public function tearDown(): void
@@ -82,7 +84,7 @@ class AdminBaseTestCase extends BaseTest
 
     public function getUserInfo()
     {
-        $response = $this->request('getInfo');
+        $response = $this->request('getInfo',[],'Auth');
         $this->userBean = new AdminUserModel((array)$response->result);
     }
 
@@ -95,13 +97,13 @@ class AdminBaseTestCase extends BaseTest
             'verifyCodeTime' => $time,
         ]);
         $userData = $this->userData;
-        $response = $this->request('login', $userData);
+        $response = $this->request('login', $userData,'Auth');
         $this->userSession = $response->result->adminSession;
     }
 
     public function logout()
     {
-        $this->request('logout');
+        $this->request('logout',[],'Auth');
     }
 
 }

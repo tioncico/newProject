@@ -11,13 +11,13 @@ use App\Model\Admin\AdminUserModel;
  */
 class AdminUserTest extends AdminBaseTestCase
 {
-	public $modelName = '/Api/Admin/AdminUser';
+	public $modelName = 'AdminUser';
 
 	public function testAdd()
 	{
 		$data = [];
 		$data['adminName'] = '测试文本RP5fLm';
-		$data['adminAccount'] = '测试文本3xNzYD';
+		$data['adminAccount'] = '测试文本J5ujXL'.mt_rand(10000,99999);
 		$data['adminPassword'] = '测试文本4yNRuK';
 		$data['addTime'] = '0';
 		$data['lastLoginTime'] = '1';
@@ -34,7 +34,7 @@ class AdminUserTest extends AdminBaseTestCase
 	{
 		$data = [];
 		$data['adminName'] = '测试文本oOte0M';
-		$data['adminAccount'] = '测试文本J5ujXL';
+		$data['adminAccount'] = '测试文本J5ujXL'.mt_rand(10000,99999);
 		$data['adminPassword'] = '测试文本iZ7TlA';
 		$data['addTime'] = '1';
 		$data['lastLoginTime'] = '0';
@@ -57,8 +57,8 @@ class AdminUserTest extends AdminBaseTestCase
 		$data = [];
 		$data['adminName'] = '测试文本KH5Aym';
 		$data['adminAccount'] = '测试文本hdXPxs';
-		$data['adminPassword'] = '测试文本Ck57UX';
-		$data['addTime'] = '1';
+        $data['adminAccount'] = '测试文本J5ujXL'.mt_rand(10000,99999);
+        $data['addTime'] = '1';
 		$data['lastLoginTime'] = '1';
 		$data['lastLoginIp'] = '测试文本D9ebRn';
 		$data['adminSession'] = '测试文本QjJhM0';
@@ -68,7 +68,7 @@ class AdminUserTest extends AdminBaseTestCase
 		$update = [];
 		$update['adminId'] = $model->adminId;
 		$update['adminName'] = '测试文本bJMO5B';
-		$update['adminAccount'] = '测试文本NP7C4H';
+		$update['adminAccount'] = '测试文本J5ujXL'.mt_rand(10000,99999);
 		$update['adminPassword'] = '测试文本sdIPNM';
 		$update['addTime'] = '1';
 		$update['lastLoginTime'] = '0';
@@ -94,7 +94,7 @@ class AdminUserTest extends AdminBaseTestCase
 	{
 		$data = [];
 		$data['adminName'] = '测试文本IfSEXk';
-		$data['adminAccount'] = '测试文本XHAfea';
+		$data['adminAccount'] = '测试文本J5ujXL'.mt_rand(10000,99999);
 		$data['adminPassword'] = '测试文本zxiQw4';
 		$data['addTime'] = '0';
 		$data['lastLoginTime'] = '2';

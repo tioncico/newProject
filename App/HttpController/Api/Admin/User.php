@@ -2,7 +2,7 @@
 
 namespace App\HttpController\Api\Admin;
 
-use App\Model\Admin\UserModel;
+use App\Model\User\UserModel;
 use EasySwoole\Component\Context\ContextManager;
 use EasySwoole\HttpAnnotation\AnnotationTag\Api;
 use EasySwoole\HttpAnnotation\AnnotationTag\ApiDescription;

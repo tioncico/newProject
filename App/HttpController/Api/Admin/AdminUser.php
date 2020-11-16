@@ -39,27 +39,18 @@ class AdminUser extends AdminBase
 	 * @ApiSuccessParam(name="msg",description="api提示信息")
 	 * @ApiSuccess({"code":200,"result":[],"msg":"新增成功"})
 	 * @ApiFail({"code":400,"result":[],"msg":"新增失败"})
-	 * @Param(name="adminId",alias="id",description="id",required="")
 	 * @Param(name="adminName",alias="昵称",description="昵称",lengthMax="32",required="")
 	 * @Param(name="adminAccount",alias="账号",description="账号",lengthMax="32",required="")
 	 * @Param(name="adminPassword",alias="密码",description="密码",lengthMax="32",required="")
-	 * @Param(name="addTime",alias="创建时间",description="创建时间",required="")
-	 * @Param(name="lastLoginTime",alias="上次登陆的时间",description="上次登陆的时间",required="")
-	 * @Param(name="lastLoginIp",alias="上次登陆的Ip",description="上次登陆的Ip",lengthMax="20",required="")
-	 * @Param(name="adminSession",lengthMax="255",required="")
 	 */
 	public function add()
 	{
 		$param = ContextManager::getInstance()->get('param');
 		$data = [
-		    'adminId'=>$param['adminId'],
 		    'adminName'=>$param['adminName'],
 		    'adminAccount'=>$param['adminAccount'],
 		    'adminPassword'=>$param['adminPassword'],
-		    'addTime'=>$param['addTime'],
-		    'lastLoginTime'=>$param['lastLoginTime'],
-		    'lastLoginIp'=>$param['lastLoginIp'],
-		    'adminSession'=>$param['adminSession'],
+		    'addTime'=>time(),
 		];
 		$model = new AdminUserModel($data);
 		$model->save();
@@ -81,10 +72,6 @@ class AdminUser extends AdminBase
 	 * @Param(name="adminName",alias="昵称",description="昵称",lengthMax="32",optional="")
 	 * @Param(name="adminAccount",alias="账号",description="账号",lengthMax="32",optional="")
 	 * @Param(name="adminPassword",alias="密码",description="密码",lengthMax="32",optional="")
-	 * @Param(name="addTime",alias="创建时间",description="创建时间",optional="")
-	 * @Param(name="lastLoginTime",alias="上次登陆的时间",description="上次登陆的时间",optional="")
-	 * @Param(name="lastLoginIp",alias="上次登陆的Ip",description="上次登陆的Ip",lengthMax="20",optional="")
-	 * @Param(name="adminSession",lengthMax="255",optional="")
 	 */
 	public function update()
 	{
@@ -99,11 +86,7 @@ class AdminUser extends AdminBase
 
 		$updateData['adminName']=$param['adminName'] ?? $info->adminName;
 		$updateData['adminAccount']=$param['adminAccount'] ?? $info->adminAccount;
-		$updateData['adminPassword']=$param['adminPassword'] ?? $info->adminPassword;
-		$updateData['addTime']=$param['addTime'] ?? $info->addTime;
-		$updateData['lastLoginTime']=$param['lastLoginTime'] ?? $info->lastLoginTime;
-		$updateData['lastLoginIp']=$param['lastLoginIp'] ?? $info->lastLoginIp;
-		$updateData['adminSession']=$param['adminSession'] ?? $info->adminSession;
+		$updateData['adminPassword']= (isset($param['adminPassword'])?$info::hashPassword($param['adminPassword']):$info->adminPassword);
 		$info->update($updateData);
 		$this->writeJson(Status::CODE_OK, $info, "更新数据成功");
 	}
