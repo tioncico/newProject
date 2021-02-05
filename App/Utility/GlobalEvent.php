@@ -3,24 +3,6 @@
 
 namespace App\Utility;
 
-
-use App\Behavior\Behavior;
-use App\Crontab\ClearRubbishCrontab;
-use App\Crontab\DiscardedChatMsgCleanCrontab;
-use App\Crontab\DiscardedSysMsgCleanCrontab;
-use App\Crontab\UserDataCountCrontab;
-use App\Log\LogHandel;
-use App\Utility\Cache\Statistics\VideoDataStatisticsTable;
-use App\Utility\Cache\Statistics\VideoFavoriteCommentStatisticsTable;
-use App\Utility\Cache\Statistics\VideoTopicPlayStatisticsTable;
-use App\Utility\Cache\Statistics\VideoUploadStatisticsTable;
-use App\Utility\Cache\SystemConfigTable;
-use App\Utility\Cache\UserCache;
-use App\Utility\Event\UserEvent;
-use App\Utility\Event\VideoEvent;
-use App\Utility\UserLastActive\UserLastActiveLogEvent;
-use App\Utility\VideoRecommend\VideoRecommendEvent;
-use App\WebSocket\Event;
 use EasySwoole\Component\Di;
 use EasySwoole\Component\Process\Manager;
 use EasySwoole\Component\Singleton;
@@ -36,7 +18,7 @@ use EasySwoole\ORM\Db\Config;
 use EasySwoole\ORM\Db\Connection;
 use EasySwoole\ORM\DbManager;
 use EasySwoole\Redis\Config\RedisConfig;
-use EasySwoole\RedisPool\Redis;
+use EasySwoole\RedisPool\RedisPool;
 use EasySwoole\Socket\Client\WebSocket;
 use Swoole\Timer;
 use Swoole\Coroutine\Scheduler;
@@ -55,8 +37,8 @@ class GlobalEvent
         $scheduler->add(function () {
             //注意,这3行代码只能放到最后面执行
             Timer::clearAll();
-            DbManager::getInstance()->getConnection()->getClientPool()->reset();
-            Redis::getInstance()->get(RedisClient::REDIS_POOL_NAME)->reset();
+            DbManager::getInstance()->getConnection()->__getClientPool()->reset();
+            RedisPool::getInstance()->getPool(RedisClient::REDIS_POOL_NAME)->reset();
         });
         //如果是测试的话，则不用再启动一次
         if (defined('TEST')) {
@@ -130,7 +112,7 @@ class GlobalEvent
     public function redisInit(){
         //注册redis
         $config = new RedisConfig(GlobalConfig::getInstance()->getConf('REDIS'));
-        $redisPoolConfig = Redis::getInstance()->register(RedisClient::REDIS_POOL_NAME, $config, RedisClient::class);
+        $redisPoolConfig = RedisPool::getInstance()->register( $config, RedisClient::REDIS_POOL_NAME,RedisClient::class);
         $redisPoolConfig->setMaxObjectNum(40);
     }
 

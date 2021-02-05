@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "67ef5827c6d01709deeb0f6f3f436341",
+    "content-hash": "1bdcd71821d1a0bef812478f5a4ca236",
     "packages": [
         {
             "name": "adbario/php-dot-notation",
@@ -150,7 +150,7 @@
         },
         {
             "name": "alibabacloud/sts",
-            "version": "1.8.635",
+            "version": "1.8.843",
             "source": {
                 "type": "git",
                 "url": "https://github.com/alibabacloud-sdk-php/sts.git",
@@ -650,16 +650,16 @@
         },
         {
             "name": "easyswoole/code-generation",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/easy-swoole/code-generation.git",
-                "reference": "7d6980bd273da07df2f54d6ac08f23fdcbbb5f77"
+                "reference": "e7e7e466528e752cf4760b7fa0353c6e9bca9b83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/easy-swoole/code-generation/zipball/7d6980bd273da07df2f54d6ac08f23fdcbbb5f77",
-                "reference": "7d6980bd273da07df2f54d6ac08f23fdcbbb5f77",
+                "url": "https://api.github.com/repos/easy-swoole/code-generation/zipball/e7e7e466528e752cf4760b7fa0353c6e9bca9b83",
+                "reference": "e7e7e466528e752cf4760b7fa0353c6e9bca9b83",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -702,7 +702,7 @@
                     "email": "1067197739@qq.com"
                 }
             ],
-            "time": "2020-10-12T01:52:15+00:00"
+            "time": "2020-12-29T07:42:11+00:00"
         },
         {
             "name": "easyswoole/command",
@@ -759,16 +759,16 @@
         },
         {
             "name": "easyswoole/component",
-            "version": "2.2.3",
+            "version": "2.2.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/easy-swoole/component.git",
-                "reference": "47d6315148a332fd8fffe9b558b21a948bb35f3d"
+                "reference": "b8fed6cdddff836e3db73bc1e5eed1c2cb392c48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/easy-swoole/component/zipball/47d6315148a332fd8fffe9b558b21a948bb35f3d",
-                "reference": "47d6315148a332fd8fffe9b558b21a948bb35f3d",
+                "url": "https://api.github.com/repos/easy-swoole/component/zipball/b8fed6cdddff836e3db73bc1e5eed1c2cb392c48",
+                "reference": "b8fed6cdddff836e3db73bc1e5eed1c2cb392c48",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -812,7 +812,7 @@
                 "framework",
                 "swoole"
             ],
-            "time": "2020-08-31T02:10:22+00:00"
+            "time": "2021-02-04T03:19:53+00:00"
         },
         {
             "name": "easyswoole/config",
@@ -977,16 +977,16 @@
         },
         {
             "name": "easyswoole/easyswoole",
-            "version": "3.4.0",
+            "version": "3.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/easy-swoole/easyswoole.git",
-                "reference": "f5bcf7a969835fd931bdb660885f2b6cd534aa9f"
+                "reference": "56137c333479b553ac4ed5338e14dfd1eb37941a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/easy-swoole/easyswoole/zipball/f5bcf7a969835fd931bdb660885f2b6cd534aa9f",
-                "reference": "f5bcf7a969835fd931bdb660885f2b6cd534aa9f",
+                "url": "https://api.github.com/repos/easy-swoole/easyswoole/zipball/56137c333479b553ac4ed5338e14dfd1eb37941a",
+                "reference": "56137c333479b553ac4ed5338e14dfd1eb37941a",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1043,20 +1043,20 @@
                 "framework",
                 "swoole"
             ],
-            "time": "2020-10-24T03:53:55+00:00"
+            "time": "2020-12-22T05:07:01+00:00"
         },
         {
             "name": "easyswoole/http",
-            "version": "1.7.15",
+            "version": "1.7.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/easy-swoole/http.git",
-                "reference": "283d78a07d171fb44472732219ee5ae46f103730"
+                "reference": "a7fc8aec663c6ddfdb8b1db3a3167131853b22ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/easy-swoole/http/zipball/283d78a07d171fb44472732219ee5ae46f103730",
-                "reference": "283d78a07d171fb44472732219ee5ae46f103730",
+                "url": "https://api.github.com/repos/easy-swoole/http/zipball/a7fc8aec663c6ddfdb8b1db3a3167131853b22ba",
+                "reference": "a7fc8aec663c6ddfdb8b1db3a3167131853b22ba",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1079,12 +1079,14 @@
                 "psr/http-message": "^1.0"
             },
             "require-dev": {
+                "easyswoole/phpunit": "^1.0",
                 "easyswoole/swoole-ide-helper": "^1.0"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "EasySwoole\\Http\\": "src/"
+                    "EasySwoole\\Http\\": "src/",
+                    "EasySwoole\\Http\\Tests\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1105,20 +1107,20 @@
                 "framework",
                 "swoole"
             ],
-            "time": "2020-10-12T01:56:11+00:00"
+            "time": "2020-12-05T15:15:14+00:00"
         },
         {
             "name": "easyswoole/http-annotation",
-            "version": "1.4.3",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/easy-swoole/http-annotation.git",
-                "reference": "ae1a8df672a937cc5359f2ea623c5e554f1e7764"
+                "reference": "25628163a06b81affb458696216356ee62305dc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/easy-swoole/http-annotation/zipball/ae1a8df672a937cc5359f2ea623c5e554f1e7764",
-                "reference": "ae1a8df672a937cc5359f2ea623c5e554f1e7764",
+                "url": "https://api.github.com/repos/easy-swoole/http-annotation/zipball/25628163a06b81affb458696216356ee62305dc2",
+                "reference": "25628163a06b81affb458696216356ee62305dc2",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1129,6 +1131,7 @@
             },
             "require": {
                 "easyswoole/annotation": "^2.0",
+                "easyswoole/component": "^2.2",
                 "easyswoole/http": "^1.7",
                 "easyswoole/parsedown": "^1.0",
                 "easyswoole/validate": "^1.2",
@@ -1169,7 +1172,7 @@
                 "framework",
                 "swoole"
             ],
-            "time": "2020-08-24T07:18:32+00:00"
+            "time": "2021-01-27T02:10:18+00:00"
         },
         {
             "name": "easyswoole/http-client",
@@ -1228,16 +1231,16 @@
         },
         {
             "name": "easyswoole/log",
-            "version": "1.0.6",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/easy-swoole/log.git",
-                "reference": "06d735e64063197d46a5fec93766828e47c40542"
+                "reference": "b19fe14d8f5153f2c2e174400e21d644618eb49b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/easy-swoole/log/zipball/06d735e64063197d46a5fec93766828e47c40542",
-                "reference": "06d735e64063197d46a5fec93766828e47c40542",
+                "url": "https://api.github.com/repos/easy-swoole/log/zipball/b19fe14d8f5153f2c2e174400e21d644618eb49b",
+                "reference": "b19fe14d8f5153f2c2e174400e21d644618eb49b",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1270,20 +1273,20 @@
                 "framework",
                 "swoole"
             ],
-            "time": "2020-05-08T08:07:43+00:00"
+            "time": "2021-02-02T07:08:50+00:00"
         },
         {
             "name": "easyswoole/mysqli",
-            "version": "2.2.7",
+            "version": "2.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/easy-swoole/mysqli.git",
-                "reference": "3589149e5ebe24f261e38497fe300bbce05f88bf"
+                "reference": "5c31dd1f7bb0e794b22df7ea117838d0ae46b1ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/easy-swoole/mysqli/zipball/3589149e5ebe24f261e38497fe300bbce05f88bf",
-                "reference": "3589149e5ebe24f261e38497fe300bbce05f88bf",
+                "url": "https://api.github.com/repos/easy-swoole/mysqli/zipball/5c31dd1f7bb0e794b22df7ea117838d0ae46b1ba",
+                "reference": "5c31dd1f7bb0e794b22df7ea117838d0ae46b1ba",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1324,20 +1327,20 @@
                 "framework",
                 "swoole"
             ],
-            "time": "2020-07-24T02:41:21+00:00"
+            "time": "2021-01-27T02:05:36+00:00"
         },
         {
             "name": "easyswoole/orm",
-            "version": "1.4.30",
+            "version": "1.4.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/easy-swoole/orm.git",
-                "reference": "e3b38f237294888b297886ae1057c5c872fcace9"
+                "reference": "ff33acc6cc14227640705e6aa2931cf8896349ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/easy-swoole/orm/zipball/e3b38f237294888b297886ae1057c5c872fcace9",
-                "reference": "e3b38f237294888b297886ae1057c5c872fcace9",
+                "url": "https://api.github.com/repos/easy-swoole/orm/zipball/ff33acc6cc14227640705e6aa2931cf8896349ef",
+                "reference": "ff33acc6cc14227640705e6aa2931cf8896349ef",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1383,7 +1386,7 @@
                 "framework",
                 "swoole"
             ],
-            "time": "2020-10-29T06:24:36+00:00"
+            "time": "2021-01-12T06:09:05+00:00"
         },
         {
             "name": "easyswoole/oss",
@@ -1520,16 +1523,16 @@
         },
         {
             "name": "easyswoole/pool",
-            "version": "1.0.11",
+            "version": "1.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/easy-swoole/pool.git",
-                "reference": "f64372e93a0313ffb116d8d6f0d87c9451300d85"
+                "reference": "b65b7fa63e69ef8adcc60fa0736b06fa76f376b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/easy-swoole/pool/zipball/f64372e93a0313ffb116d8d6f0d87c9451300d85",
-                "reference": "f64372e93a0313ffb116d8d6f0d87c9451300d85",
+                "url": "https://api.github.com/repos/easy-swoole/pool/zipball/b65b7fa63e69ef8adcc60fa0736b06fa76f376b2",
+                "reference": "b65b7fa63e69ef8adcc60fa0736b06fa76f376b2",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1574,20 +1577,20 @@
                 "framework",
                 "swoole"
             ],
-            "time": "2020-05-31T13:57:38+00:00"
+            "time": "2021-01-12T06:38:03+00:00"
         },
         {
             "name": "easyswoole/redis",
-            "version": "1.3.5",
+            "version": "1.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/easy-swoole/redis.git",
-                "reference": "ce18918bad445bbe754af11a28d1c9c0bb0b2c1b"
+                "reference": "6737732d29c9bf4840ee6d9f1548f019e2f86ba7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/easy-swoole/redis/zipball/ce18918bad445bbe754af11a28d1c9c0bb0b2c1b",
-                "reference": "ce18918bad445bbe754af11a28d1c9c0bb0b2c1b",
+                "url": "https://api.github.com/repos/easy-swoole/redis/zipball/6737732d29c9bf4840ee6d9f1548f019e2f86ba7",
+                "reference": "6737732d29c9bf4840ee6d9f1548f019e2f86ba7",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1629,20 +1632,20 @@
                 "framework",
                 "swoole"
             ],
-            "time": "2020-09-17T04:12:34+00:00"
+            "time": "2020-12-24T09:17:14+00:00"
         },
         {
             "name": "easyswoole/redis-pool",
-            "version": "2.1.2",
+            "version": "2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/easy-swoole/redis-pool.git",
-                "reference": "3d6d0601f80ce2ad16764c534078b5970d85f6da"
+                "reference": "223f3bafe2d7013d1f38b6d5a84509a0b74fc4b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/easy-swoole/redis-pool/zipball/3d6d0601f80ce2ad16764c534078b5970d85f6da",
-                "reference": "3d6d0601f80ce2ad16764c534078b5970d85f6da",
+                "url": "https://api.github.com/repos/easy-swoole/redis-pool/zipball/223f3bafe2d7013d1f38b6d5a84509a0b74fc4b0",
+                "reference": "223f3bafe2d7013d1f38b6d5a84509a0b74fc4b0",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1684,7 +1687,7 @@
                 "framework",
                 "swoole"
             ],
-            "time": "2020-03-09T07:04:44+00:00"
+            "time": "2020-12-29T05:48:33+00:00"
         },
         {
             "name": "easyswoole/session",
@@ -1744,16 +1747,16 @@
         },
         {
             "name": "easyswoole/socket",
-            "version": "1.1.13",
+            "version": "1.1.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/easy-swoole/socket.git",
-                "reference": "cb105c40fe71f51049ed28e7d69f9a3e7ca0a9dd"
+                "reference": "e5765ad8b6112d786a6d6c6c8f47a7429effbcea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/easy-swoole/socket/zipball/cb105c40fe71f51049ed28e7d69f9a3e7ca0a9dd",
-                "reference": "cb105c40fe71f51049ed28e7d69f9a3e7ca0a9dd",
+                "url": "https://api.github.com/repos/easy-swoole/socket/zipball/e5765ad8b6112d786a6d6c6c8f47a7429effbcea",
+                "reference": "e5765ad8b6112d786a6d6c6c8f47a7429effbcea",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1794,20 +1797,20 @@
                 "framework",
                 "swoole"
             ],
-            "time": "2020-09-04T07:29:13+00:00"
+            "time": "2021-01-28T08:05:52+00:00"
         },
         {
             "name": "easyswoole/spl",
-            "version": "1.3.7",
+            "version": "1.3.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/easy-swoole/spl.git",
-                "reference": "b9d74dfbeb59086c51616ba09d7728cea7351d05"
+                "reference": "ecbf9ac61b729e2c9b32e64998c57a78eec76f82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/easy-swoole/spl/zipball/b9d74dfbeb59086c51616ba09d7728cea7351d05",
-                "reference": "b9d74dfbeb59086c51616ba09d7728cea7351d05",
+                "url": "https://api.github.com/repos/easy-swoole/spl/zipball/ecbf9ac61b729e2c9b32e64998c57a78eec76f82",
+                "reference": "ecbf9ac61b729e2c9b32e64998c57a78eec76f82",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1849,7 +1852,7 @@
                 "framework",
                 "swoole"
             ],
-            "time": "2020-04-05T15:50:30+00:00"
+            "time": "2021-01-19T12:08:25+00:00"
         },
         {
             "name": "easyswoole/swoole-ide-helper",
@@ -1891,16 +1894,16 @@
         },
         {
             "name": "easyswoole/task",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/easy-swoole/task.git",
-                "reference": "3694bab2ba614c8d78c4930c721c934635b1c9e3"
+                "reference": "e1f7a1d03e22438c9a4bdc6e5fa8f849c346dc07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/easy-swoole/task/zipball/3694bab2ba614c8d78c4930c721c934635b1c9e3",
-                "reference": "3694bab2ba614c8d78c4930c721c934635b1c9e3",
+                "url": "https://api.github.com/repos/easy-swoole/task/zipball/e1f7a1d03e22438c9a4bdc6e5fa8f849c346dc07",
+                "reference": "e1f7a1d03e22438c9a4bdc6e5fa8f849c346dc07",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1932,7 +1935,7 @@
             "keywords": [
                 "easyswoole"
             ],
-            "time": "2020-04-06T14:02:57+00:00"
+            "time": "2020-12-01T13:43:22+00:00"
         },
         {
             "name": "easyswoole/trigger",
@@ -2039,16 +2042,16 @@
         },
         {
             "name": "easyswoole/utility",
-            "version": "1.1.4",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/easy-swoole/utility.git",
-                "reference": "109f4d86906d9610e2feedfcb04a8ecb0e5dba8b"
+                "reference": "0aeff63dcc9ed54f5be44f79d0caf433d25c6332"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/easy-swoole/utility/zipball/109f4d86906d9610e2feedfcb04a8ecb0e5dba8b",
-                "reference": "109f4d86906d9610e2feedfcb04a8ecb0e5dba8b",
+                "url": "https://api.github.com/repos/easy-swoole/utility/zipball/0aeff63dcc9ed54f5be44f79d0caf433d25c6332",
+                "reference": "0aeff63dcc9ed54f5be44f79d0caf433d25c6332",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2061,6 +2064,9 @@
                 "ext-json": "*",
                 "ext-openssl": "*",
                 "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "easyswoole/swoole-ide-helper": "^1.3"
             },
             "type": "library",
             "autoload": {
@@ -2079,20 +2085,20 @@
                 }
             ],
             "description": "easyswoole extension tool library",
-            "time": "2020-05-19T03:06:24+00:00"
+            "time": "2021-01-08T03:29:53+00:00"
         },
         {
             "name": "easyswoole/validate",
-            "version": "1.2.7",
+            "version": "1.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/easy-swoole/validate.git",
-                "reference": "ccce7a00cf86c99dc17e1e04592cfe40270d820c"
+                "reference": "049e8088a40310280048fa87b23c254b0b2f2586"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/easy-swoole/validate/zipball/ccce7a00cf86c99dc17e1e04592cfe40270d820c",
-                "reference": "ccce7a00cf86c99dc17e1e04592cfe40270d820c",
+                "url": "https://api.github.com/repos/easy-swoole/validate/zipball/049e8088a40310280048fa87b23c254b0b2f2586",
+                "reference": "049e8088a40310280048fa87b23c254b0b2f2586",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2133,7 +2139,7 @@
                 "framework",
                 "swoole"
             ],
-            "time": "2020-10-30T08:20:19+00:00"
+            "time": "2021-01-18T12:33:59+00:00"
         },
         {
             "name": "easyswoole/verifycode",
@@ -2542,16 +2548,16 @@
         },
         {
             "name": "nette/php-generator",
-            "version": "v3.5.1",
+            "version": "v3.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/php-generator.git",
-                "reference": "fe54415cd22d01bee1307a608058bf131978610a"
+                "reference": "41dcc5d1cb322835e5950a76515166c90923c6b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/php-generator/zipball/fe54415cd22d01bee1307a608058bf131978610a",
-                "reference": "fe54415cd22d01bee1307a608058bf131978610a",
+                "url": "https://api.github.com/repos/nette/php-generator/zipball/41dcc5d1cb322835e5950a76515166c90923c6b7",
+                "reference": "41dcc5d1cb322835e5950a76515166c90923c6b7",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2608,20 +2614,20 @@
                 "php",
                 "scaffolding"
             ],
-            "time": "2020-11-04T11:26:26+00:00"
+            "time": "2021-01-19T13:02:23+00:00"
         },
         {
             "name": "nette/utils",
-            "version": "v3.1.3",
+            "version": "v3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "c09937fbb24987b2a41c6022ebe84f4f1b8eec0f"
+                "reference": "2bc2f58079c920c2ecbb6935645abf6f2f5f94ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/c09937fbb24987b2a41c6022ebe84f4f1b8eec0f",
-                "reference": "c09937fbb24987b2a41c6022ebe84f4f1b8eec0f",
+                "url": "https://api.github.com/repos/nette/utils/zipball/2bc2f58079c920c2ecbb6935645abf6f2f5f94ba",
+                "reference": "2bc2f58079c920c2ecbb6935645abf6f2f5f94ba",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2631,7 +2637,10 @@
                 ]
             },
             "require": {
-                "php": ">=7.1"
+                "php": ">=7.2 <8.1"
+            },
+            "conflict": {
+                "nette/di": "<3.0.6"
             },
             "require-dev": {
                 "nette/tester": "~2.0",
@@ -2650,7 +2659,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -2674,7 +2683,7 @@
                     "homepage": "https://nette.org/contributors"
                 }
             ],
-            "description": "🛠 Nette Utils: lightweight utilities for string & array manipulation, image handling, safe JSON encoding/decoding, validation, slug or strong password generating etc.",
+            "description": "🛠  Nette Utils: lightweight utilities for string & array manipulation, image handling, safe JSON encoding/decoding, validation, slug or strong password generating etc.",
             "homepage": "https://nette.org",
             "keywords": [
                 "array",
@@ -2692,7 +2701,7 @@
                 "utility",
                 "validation"
             ],
-            "time": "2020-08-07T10:34:21+00:00"
+            "time": "2021-01-11T03:05:59+00:00"
         },
         {
             "name": "nikic/fast-route",
@@ -2748,16 +2757,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.10.2",
+            "version": "v4.10.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "658f1be311a230e0907f5dfe0213742aff0596de"
+                "reference": "c6d052fc58cb876152f89f532b95a8d7907e7f0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/658f1be311a230e0907f5dfe0213742aff0596de",
-                "reference": "658f1be311a230e0907f5dfe0213742aff0596de",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/c6d052fc58cb876152f89f532b95a8d7907e7f0e",
+                "reference": "c6d052fc58cb876152f89f532b95a8d7907e7f0e",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2802,7 +2811,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2020-09-26T10:30:38+00:00"
+            "time": "2020-12-20T10:01:03+00:00"
         },
         {
             "name": "opis/closure",
@@ -2935,16 +2944,16 @@
         },
         {
             "name": "phar-io/version",
-            "version": "3.0.2",
+            "version": "3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phar-io/version.git",
-                "reference": "c6bb6825def89e0a32220f88337f8ceaf1975fa0"
+                "reference": "e4782611070e50613683d2b9a57730e9a3ba5451"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phar-io/version/zipball/c6bb6825def89e0a32220f88337f8ceaf1975fa0",
-                "reference": "c6bb6825def89e0a32220f88337f8ceaf1975fa0",
+                "url": "https://api.github.com/repos/phar-io/version/zipball/e4782611070e50613683d2b9a57730e9a3ba5451",
+                "reference": "e4782611070e50613683d2b9a57730e9a3ba5451",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2984,7 +2993,7 @@
                 }
             ],
             "description": "Library for handling version information and constraints",
-            "time": "2020-06-27T14:39:04+00:00"
+            "time": "2020-12-13T23:18:30+00:00"
         },
         {
             "name": "php-curl-class/php-curl-class",
@@ -3225,16 +3234,16 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.12.1",
+            "version": "1.12.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "8ce87516be71aae9b956f81906aaf0338e0d8a2d"
+                "reference": "245710e971a030f42e08f4912863805570f23d39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/8ce87516be71aae9b956f81906aaf0338e0d8a2d",
-                "reference": "8ce87516be71aae9b956f81906aaf0338e0d8a2d",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/245710e971a030f42e08f4912863805570f23d39",
+                "reference": "245710e971a030f42e08f4912863805570f23d39",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3252,7 +3261,7 @@
             },
             "require-dev": {
                 "phpspec/phpspec": "^6.0",
-                "phpunit/phpunit": "^8.0 || ^9.0 <9.3"
+                "phpunit/phpunit": "^8.0 || ^9.0"
             },
             "type": "library",
             "extra": {
@@ -3290,20 +3299,20 @@
                 "spy",
                 "stub"
             ],
-            "time": "2020-09-29T09:10:42+00:00"
+            "time": "2020-12-19T10:15:11+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "9.2.3",
+            "version": "9.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "6b20e2055f7c29b56cb3870b3de7cc463d7add41"
+                "reference": "f3e026641cc91909d421802dd3ac7827ebfd97e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/6b20e2055f7c29b56cb3870b3de7cc463d7add41",
-                "reference": "6b20e2055f7c29b56cb3870b3de7cc463d7add41",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/f3e026641cc91909d421802dd3ac7827ebfd97e1",
+                "reference": "f3e026641cc91909d421802dd3ac7827ebfd97e1",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3323,7 +3332,7 @@
                 "sebastian/code-unit-reverse-lookup": "^2.0.2",
                 "sebastian/complexity": "^2.0",
                 "sebastian/environment": "^5.1.2",
-                "sebastian/lines-of-code": "^1.0",
+                "sebastian/lines-of-code": "^1.0.3",
                 "sebastian/version": "^3.0.1",
                 "theseer/tokenizer": "^1.2.0"
             },
@@ -3369,7 +3378,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-30T10:46:41+00:00"
+            "time": "2020-11-28T06:44:49+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -3622,16 +3631,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.4.3",
+            "version": "9.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "9fa359ff5ddaa5eb2be2bedb08a6a5787a5807ab"
+                "reference": "f661659747f2f87f9e72095bb207bceb0f151cb4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9fa359ff5ddaa5eb2be2bedb08a6a5787a5807ab",
-                "reference": "9fa359ff5ddaa5eb2be2bedb08a6a5787a5807ab",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/f661659747f2f87f9e72095bb207bceb0f151cb4",
+                "reference": "f661659747f2f87f9e72095bb207bceb0f151cb4",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3653,7 +3662,7 @@
                 "phar-io/version": "^3.0.2",
                 "php": ">=7.3",
                 "phpspec/prophecy": "^1.12.1",
-                "phpunit/php-code-coverage": "^9.2",
+                "phpunit/php-code-coverage": "^9.2.3",
                 "phpunit/php-file-iterator": "^3.0.5",
                 "phpunit/php-invoker": "^3.1.1",
                 "phpunit/php-text-template": "^2.0.3",
@@ -3684,7 +3693,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "9.4-dev"
+                    "dev-master": "9.5-dev"
                 }
             },
             "autoload": {
@@ -3723,7 +3732,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-10T12:53:30+00:00"
+            "time": "2021-02-02T14:45:58+00:00"
         },
         {
             "name": "psr/http-client",
@@ -4470,16 +4479,16 @@
         },
         {
             "name": "sebastian/lines-of-code",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/lines-of-code.git",
-                "reference": "acf76492a65401babcf5283296fa510782783a7a"
+                "reference": "c1c2e997aa3146983ed888ad08b15470a2e22ecc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/lines-of-code/zipball/acf76492a65401babcf5283296fa510782783a7a",
-                "reference": "acf76492a65401babcf5283296fa510782783a7a",
+                "url": "https://api.github.com/repos/sebastianbergmann/lines-of-code/zipball/c1c2e997aa3146983ed888ad08b15470a2e22ecc",
+                "reference": "c1c2e997aa3146983ed888ad08b15470a2e22ecc",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -4525,7 +4534,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-26T17:03:56+00:00"
+            "time": "2020-11-28T06:42:11+00:00"
         },
         {
             "name": "sebastian/object-enumerator",
@@ -4880,16 +4889,16 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.20.0",
+            "version": "v1.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "f4ba089a5b6366e453971d3aad5fe8e897b37f41"
+                "reference": "c6c942b1ac76c82448322025e084cadc56048b4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/f4ba089a5b6366e453971d3aad5fe8e897b37f41",
-                "reference": "f4ba089a5b6366e453971d3aad5fe8e897b37f41",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/c6c942b1ac76c82448322025e084cadc56048b4e",
+                "reference": "c6c942b1ac76c82448322025e084cadc56048b4e",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -4907,7 +4916,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.20-dev"
+                    "dev-main": "1.22-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -4958,20 +4967,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-23T14:02:19+00:00"
+            "time": "2021-01-07T16:49:33+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.20.0",
+            "version": "v1.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "39d483bdf39be819deabf04ec872eb0b2410b531"
+                "reference": "f377a3dd1fde44d37b9831d68dc8dea3ffd28e13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/39d483bdf39be819deabf04ec872eb0b2410b531",
-                "reference": "39d483bdf39be819deabf04ec872eb0b2410b531",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/f377a3dd1fde44d37b9831d68dc8dea3ffd28e13",
+                "reference": "f377a3dd1fde44d37b9831d68dc8dea3ffd28e13",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -4989,7 +4998,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.20-dev"
+                    "dev-main": "1.22-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -5041,7 +5050,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-23T14:02:19+00:00"
+            "time": "2021-01-07T16:49:33+00:00"
         },
         {
             "name": "theseer/tokenizer",
@@ -5100,12 +5109,12 @@
             "version": "1.9.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/webmozart/assert.git",
+                "url": "https://github.com/webmozarts/assert.git",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "shasum": "",
                 "mirrors": [

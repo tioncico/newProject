@@ -1,6 +1,6 @@
 {
   "require": {
-    "easyswoole/easyswoole": "3.4.0",
+    "easyswoole/easyswoole": "3.4.x",
     "easyswoole/orm": "^1.4",
     "easyswoole/swoole-ide-helper": "^1.3",
     "easyswoole/http-annotation": "^1.4",

@@ -11,8 +11,10 @@ namespace App\Service\Common;
 use App\Utility\Assert\Assert;
 use App\Utility\OssClient;
 use EasySwoole\Component\Singleton;
+use EasySwoole\EasySwoole\Logger;
 use EasySwoole\ORM\Db\MysqlPool;
 use EasySwoole\EasySwoole\Config;
+use EasySwoole\Oss\AliYun\OssConst;
 use EasySwoole\Utility\File;
 
 class OssService
@@ -22,13 +24,7 @@ class OssService
     const TEMP_FILE_PREFIX_PATH = 'temp/';
     const SIGN_EXPIRE = 30;
 
-    /**
-     * 客户端签名
-     * getSts
-     * @return array
-     * @author tioncico
-     * Time: 下午5:05
-     */
+
     public function getSts()
     {
         try {
@@ -53,7 +49,7 @@ class OssService
         return $result;
     }
 
-    public function gmtIso8601($time)
+    function gmtIso8601($time)
     {
         $dtStr = date('c', $time);
         $mydatetime = new \DateTime($dtStr);
@@ -79,7 +75,7 @@ class OssService
 
         // $host的格式为 bucketname.endpoint，请替换为您的真实信息。
         $host = Config::getInstance()->getConf('ALI_OSS.HOST');
-        Assert::assert(!!$host,'ALI_OSS.HOST 不能为空');
+        Assert::assert(!!$host, 'ALI_OSS.HOST 不能为空');
         $dir = self::TEMP_FILE_PREFIX_PATH . date('His') . rand(100000, 999999);          // 用户上传文件时指定的前缀。
         $callbackParam = [
             'callbackUrl'      => $this->getCallbackUrl(),
@@ -93,7 +89,7 @@ class OssService
         $expire = self::SIGN_EXPIRE;  //设置该policy超时时间是10s. 即这个policy过了这个有效时间，将不能访问。
         $end = $now + $expire;
         $expiration = $this->gmtIso8601($end);
-        $maxLength = Config::getInstance()->getConf('MAIN_SERVER.SETTING.package_max_length')??2*2048;
+        $maxLength = Config::getInstance()->getConf('MAIN_SERVER.SETTING.package_max_length') ?? 2 * 2048;
         //最大文件大小.用户可以自己设置
         $condition = array(0 => 'content-length-range', 1 => 0, 2 => $maxLength);
         $conditions[] = $condition;
@@ -119,7 +115,7 @@ class OssService
         return $result;
     }
 
-    public function ossCallback(\EasySwoole\Http\Request $request)
+    static function ossCallback(\EasySwoole\Http\Request $request)
     {
 // 2.获取OSS的签名
         $authorization = base64_decode($request->getHeader('authorization')[0]);
@@ -156,7 +152,7 @@ class OssService
      * @return string|null
      * @throws \App\Utility\Assert\AssertException
      */
-    public function moveFilePath($filePath, $fileType): ?string
+    static function moveFilePath($filePath, $fileType): ?string
     {
 
         //如果本身就为空,则不上传
@@ -171,8 +167,10 @@ class OssService
         try {
             $ossClient = new OssClient();
             $path = $ossClient->copyFile($filePath, $fileType);
+            $ossClient->aliOssClient()->putObjectAcl($ossClient->getOssBucket(), $path, OssConst::OSS_ACL_TYPE_PUBLIC_READ_WRITE);
             return $path;
         } catch (\Throwable $throwable) {
+            Logger::getInstance()->log((string)$throwable);
             Assert::assert(false, '文件数据异常,请重新上传');
         }
 
@@ -182,7 +180,7 @@ class OssService
      * 删除临时文件
      * @param $filePath
      */
-    public function delFile($filePath)
+    static function delTempFile($filePath)
     {
         //如果本身就为空,则不上传
         if (empty($filePath)) {
@@ -194,18 +192,23 @@ class OssService
         }
 
         $ossClient = new OssClient();
-        $ossClient->delTempFile($filePath);
+        $ossClient->delFile($filePath);
     }
 
     /**
-     * 拼接oss路径
-     * splicingOssHost
-     * @param $str
-     * @return string|null
-     * @author tioncico
-     * Time: 下午5:24
+     * 删除旧文件
+     * @param $filePath
      */
-    public function splicingOssHost($str)
+    static function delFile($filePath)
+    {
+        $ossClient = new OssClient();
+        if ($filePath) {
+            $ossClient->delFile($filePath);
+        }
+    }
+
+
+    static function splicingOssHost($str)
     {
         if ($str == null) {
             return null;
@@ -213,6 +216,7 @@ class OssService
         $host = Config::getInstance()->getConf('ALI_OSS')['HOST'] ?? '';
         return "{$host}/{$str}";
     }
+
 
     /**
      * 获取oss直传回调参数
@@ -224,10 +228,17 @@ class OssService
      */
     protected function getCallbackUrl()
     {
-        $webSsl = (Config::getInstance()->getConf('WEB.SSL') ? 'https://' : 'http://');
-        $webHost = $webSsl . Config::getInstance()->getConf('WEB.HOST');
+        $webHost = Config::getInstance()->getConf('WEB.HOST');
         Assert::assert(!!$webHost, 'webHost未配置!');
-        $url = $webSsl . $webHost . '/Api/Common/FileCallback/fileCallback';
+        $url = (Config::getInstance()->getConf('WEB.SSL') == true ? 'https://' : 'http://') . $webHost . '/Api/Common/FileCallback/fileCallback';
         return $url;
     }
+
+    //获取视频第一帧
+    static function videoFirstFrame($src)
+    {
+        $poster = $src . '?x-oss-process=video/snapshot,t_0000,f_jpg';
+        return $poster;
+    }
+
 }
