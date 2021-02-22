@@ -27,7 +27,7 @@ class VerifyCode extends CommonBase
 {
 
     /**
-     * @Api(name="verifyCode"path="/Api/Common/VerifyCode/verifyCode")
+     * @Api(name="verifyCode",path="/Api/Common/VerifyCode/verifyCode")
      * @ApiDescription("验证码生成")
      */
     function verifyCode()

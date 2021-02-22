@@ -126,20 +126,20 @@ class UEditor extends AdminBase
     protected function uploadImage()
     {
         $result = $this->UEditor->uploadImage($this->request());
-        $fileInfo = $this->uploadOss($result);
-        unlink($this->rootPath.$result->getUrl());
-        $result->setUrl($fileInfo['path']);
-        $result->setTitle($fileInfo['title']);
+//        $fileInfo = $this->uploadOss($result);
+//        unlink($this->rootPath.$result->getUrl());
+//        $result->setUrl($fileInfo['path']);
+//        $result->setTitle($fileInfo['title']);
         $this->writeData($result);
     }
 
     protected function uploadScrawl()
     {
         $result = $this->UEditor->uploadScrawl($this->request());
-        $fileInfo = $this->uploadOss($result);
-        unlink($this->rootPath.$result->getUrl());
-        $result->setUrl($fileInfo['path']);
-        $result->setTitle($fileInfo['title']);
+//        $fileInfo = $this->uploadOss($result);
+//        unlink($this->rootPath.$result->getUrl());
+//        $result->setUrl($fileInfo['path']);
+//        $result->setTitle($fileInfo['title']);
 
         $this->writeData($result);
     }
@@ -147,10 +147,10 @@ class UEditor extends AdminBase
     protected function uploadVideo()
     {
         $result = $this->UEditor->uploadVideo($this->request());
-        $fileInfo = $this->uploadOss($result);
-        unlink($this->rootPath.$result->getUrl());
-        $result->setUrl($fileInfo['path']);
-        $result->setTitle($fileInfo['title']);
+//        $fileInfo = $this->uploadOss($result);
+//        unlink($this->rootPath.$result->getUrl());
+//        $result->setUrl($fileInfo['path']);
+//        $result->setTitle($fileInfo['title']);
 
         $this->writeData($result);
     }

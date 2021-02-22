@@ -56,6 +56,7 @@ class GlobalEvent
                 return false;
             }
         });
+
     }
 
     /**
