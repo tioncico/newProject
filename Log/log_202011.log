@@ -1,0 +1,75 @@
+[2020-11-16 10:58:16][debug][error]:[Uncaught EasySwoole\ORM\Exception\Exception: SQLSTATE[42S02] [1146] Table 'test.user_list' doesn't exist [show full columns from user_list] in /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/orm/src/Db/MysqliClient.php:70
+Stack trace:
+#0 /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/orm/src/Utility/TableObjectGeneration.php(39): EasySwoole\ORM\Db\MysqliClient->query(Object(EasySwoole\Mysqli\QueryBuilder))
+#1 /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/orm/src/Utility/TableObjectGeneration.php(58): EasySwoole\ORM\Utility\TableObjectGeneration->getTableColumnsInfo()
+#2 /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/code-generation/src/CodeGeneration.php(35): EasySwoole\ORM\Utility\TableObjectGeneration->generationTable()
+#3 /Users/tioncico/PhpstormProjects/tioncico/newProject/test.php(11): EasySwoole\CodeGeneration\CodeGeneration->__construct('user_list', Object(EasySwoole\ORM\Db\Connection))
+#4 {main}
+  thrown at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/orm/src/Db/MysqliClient.php line:70]
+[2020-11-16 11:07:19][debug][error]:[Uncaught TypeError: Argument 2 passed to EasySwoole\CodeGeneration\CodeGeneration::generationController() must be an instance of EasySwoole\CodeGeneration\ModelGeneration\ModelGeneration or null, string given, called in /Users/tioncico/PhpstormProjects/tioncico/newProject/test.php on line 16 and defined in /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/code-generation/src/CodeGeneration.php:72
+Stack trace:
+#0 /Users/tioncico/PhpstormProjects/tioncico/newProject/test.php(16): EasySwoole\CodeGeneration\CodeGeneration->generationController('\\Api\\Admin', '/Users/tioncico...', '', 'App\\HttpControl...')
+#1 {main}
+  thrown at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/code-generation/src/CodeGeneration.php line:72]
+[2020-11-16 11:09:21][debug][error]:[Uncaught ArgumentCountError: Too few arguments to function EasySwoole\CodeGeneration\CodeGeneration::getModelGeneration(), 0 passed in /Users/tioncico/PhpstormProjects/tioncico/newProject/test.php on line 16 and at least 1 expected in /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/code-generation/src/CodeGeneration.php:39
+Stack trace:
+#0 /Users/tioncico/PhpstormProjects/tioncico/newProject/test.php(16): EasySwoole\CodeGeneration\CodeGeneration->getModelGeneration()
+#1 {main}
+  thrown at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/code-generation/src/CodeGeneration.php line:39]
+[2020-11-16 11:32:20][debug][error]:[Uncaught EasySwoole\ORM\Exception\Exception: SQLSTATE[42000] [1064] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 [show full columns from ] in /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/orm/src/Db/MysqliClient.php:70
+Stack trace:
+#0 /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/orm/src/Utility/TableObjectGeneration.php(39): EasySwoole\ORM\Db\MysqliClient->query(Object(EasySwoole\Mysqli\QueryBuilder))
+#1 /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/orm/src/Utility/TableObjectGeneration.php(58): EasySwoole\ORM\Utility\TableObjectGeneration->getTableColumnsInfo()
+#2 /Users/tioncico/PhpstormProjects/tioncico/newProject/test.php(16): EasySwoole\ORM\Utility\TableObjectGeneration->generationTable()
+#3 {main}
+  thrown at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/orm/src/Db/MysqliClient.php line:70]
+[2020-11-16 14:09:28][debug][error]:[Uncaught EasySwoole\ORM\Exception\Exception: SQLSTATE[42S02] [1146] Table 'test.system_notice' doesn't exist [show full columns from system_notice] in /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/orm/src/Db/MysqliClient.php:70
+Stack trace:
+#0 /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/orm/src/Utility/TableObjectGeneration.php(39): EasySwoole\ORM\Db\MysqliClient->query(Object(EasySwoole\Mysqli\QueryBuilder))
+#1 /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/orm/src/Utility/TableObjectGeneration.php(58): EasySwoole\ORM\Utility\TableObjectGeneration->getTableColumnsInfo()
+#2 /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/code-generation/src/CodeGeneration.php(35): EasySwoole\ORM\Utility\TableObjectGeneration->generationTable()
+#3 /Users/tioncico/PhpstormProjects/tioncico/newProject/test.php(21): EasySwoole\CodeGeneration\CodeGeneration->__construct('system_notice', Object(EasySwoole\ORM\Db\Connection))
+#4 {main} at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/orm/src/Db/MysqliClient.php line:70]
+[2020-11-16 14:09:38][debug][error]:[Uncaught EasySwoole\ORM\Exception\Exception: SQLSTATE[42S02] [1146] Table 'test.admin_user_list' doesn't exist [show full columns from admin_user_list] in /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/orm/src/Db/MysqliClient.php:70
+Stack trace:
+#0 /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/orm/src/Utility/TableObjectGeneration.php(39): EasySwoole\ORM\Db\MysqliClient->query(Object(EasySwoole\Mysqli\QueryBuilder))
+#1 /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/orm/src/Utility/TableObjectGeneration.php(58): EasySwoole\ORM\Utility\TableObjectGeneration->getTableColumnsInfo()
+#2 /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/code-generation/src/CodeGeneration.php(35): EasySwoole\ORM\Utility\TableObjectGeneration->generationTable()
+#3 /Users/tioncico/PhpstormProjects/tioncico/newProject/test.php(21): EasySwoole\CodeGeneration\CodeGeneration->__construct('admin_user_list', Object(EasySwoole\ORM\Db\Connection))
+#4  at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/orm/src/Db/MysqliClient.php line:70]
+[2020-11-16 15:32:33][debug][error]:[Uncaught Error: Call to undefined method App\Utility\GlobalEvent::statistics() in /Users/tioncico/PhpstormProjects/tioncico/newProject/App/Utility/GlobalEvent.php:70
+Stack trace:
+#0 /Users/tioncico/PhpstormProjects/tioncico/newProject/EasySwooleEvent.php(21): App\Utility\GlobalEvent->mainServerCreate(Object(EasySwoole\EasySwoole\Swoole\EventRegister))
+#1 /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/easyswoole/src/Core.php(109): EasySwoole\EasySwoole\EasySwooleEvent::mainServerCreate(Object(EasySwoole\EasySwoole\Swoole\EventRegister))
+#2 /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/easyswoole/src/Command/DefaultCommand/Server.php(114): EasySwoole\EasySwoole\Core->createServer()
+#3 /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/easyswoole/src/Command/DefaultCommand/Server.php(54): EasySwoole\EasySwoole\Command\DefaultCommand\Server->start()
+#4 /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/command/src/CommandMana at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/App/Utility/GlobalEvent.php line:70]
+[2020-11-16 15:35:44][debug][notice]:[Trying to get property 'code' of non-object at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/UnitTest/Admin/AdminBaseTestCase.php line:113]
+[2020-11-16 15:36:11][debug][notice]:[Trying to get property 'code' of non-object at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/UnitTest/Admin/AdminBaseTestCase.php line:114]
+[2020-11-16 15:36:57][debug][notice]:[Trying to get property 'code' of non-object at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/UnitTest/Admin/AdminBaseTestCase.php line:114]
+[2020-11-16 15:37:56][debug][notice]:[Trying to get property 'code' of non-object at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/UnitTest/Admin/AdminBaseTestCase.php line:114]
+[2020-11-16 15:38:06][debug][notice]:[Undefined property: stdClass::$session at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/UnitTest/Admin/AdminBaseTestCase.php line:99]
+[2020-11-16 16:44:37][debug][error]:[Uncaught Swoole\Exception: failed to listen server port[0.0.0.0:9501], Error: Address already in use[48] in /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/easyswoole/src/ServerManager.php:58
+Stack trace:
+#0 /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/easyswoole/src/ServerManager.php(58): Swoole\Server->__construct('0.0.0.0', 9501, 2, 1)
+#1 /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/easyswoole/src/Core.php(107): EasySwoole\EasySwoole\ServerManager->createSwooleServer(9501, 2, '0.0.0.0', Array, 2, 1)
+#2 /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/easyswoole/src/Command/DefaultCommand/Server.php(114): EasySwoole\EasySwoole\Core->createServer()
+#3 /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/easyswoole/src/Command/DefaultCommand/Server.php(54): EasySwoole\EasySwoole\Command\DefaultCommand\Server->start()
+#4 /Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/comman at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/vendor/easyswoole/easyswoole/src/ServerManager.php line:58]
+[2020-11-16 16:44:44][debug][error]:[Class 'App\HttpController\Api\Admin\UserBase' not found at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/App/HttpController/Api/User/Auth.php line:27]
+[2020-11-16 16:44:44][debug][notice]:[Trying to get property 'code' of non-object at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/UnitTest/BaseTest.php line:34]
+[2020-11-16 17:27:43][debug][notice]:[Trying to get property 'code' of non-object at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/UnitTest/BaseTest.php line:34]
+[2020-11-16 17:31:05][debug][notice]:[Trying to get property 'code' of non-object at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/UnitTest/BaseTest.php line:34]
+[2020-11-16 17:31:35][debug][notice]:[Trying to get property 'code' of non-object at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/UnitTest/BaseTest.php line:34]
+[2020-11-17 10:36:53][debug][error]:[Uncaught Error: Call to a member function toArray() on array in /Users/tioncico/PhpstormProjects/tioncico/newProject/test2.php:18
+Stack trace:
+#0 {main}
+  thrown at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/test2.php line:18]
+[2020-11-17 11:02:46][debug][notice]:[Undefined variable: result at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/test.php line:30]
+[2020-11-17 11:02:55][debug][notice]:[Undefined variable: result at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/test.php line:30]
+[2020-11-17 11:03:03][debug][notice]:[Undefined variable: result at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/test.php line:30]
+[2020-11-17 11:03:11][debug][notice]:[Undefined variable: result at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/test.php line:30]
+[2020-11-17 11:03:18][debug][notice]:[Undefined variable: result at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/test.php line:30]
+[2020-11-17 11:03:26][debug][notice]:[Undefined variable: result at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/test.php line:30]
+[2020-11-17 11:03:31][debug][notice]:[Undefined variable: result at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/test.php line:30]
+[2020-11-17 11:03:39][debug][notice]:[Undefined variable: result at file:/Users/tioncico/PhpstormProjects/tioncico/newProject/test.php line:30]

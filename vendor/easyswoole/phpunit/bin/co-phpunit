@@ -1,0 +1,31 @@
+#!/usr/bin/env php
+<?php
+/**
+ * Created by PhpStorm.
+ * User: yf
+ * Date: 2019-01-06
+ * Time: 21:49
+ */
+
+
+use EasySwoole\Phpunit\Runner;
+
+require_once getcwd().'/vendor/autoload.php';
+/*
+ * 允许自动的执行一些初始化操作，只初始化一次
+ */
+if(file_exists(getcwd().'/phpunit.php')){
+    require_once getcwd().'/phpunit.php';
+}
+/*
+* 清除输入变量
+*/
+global $argv;
+$key = array_search('--no-coroutine',$argv);
+$noCoroutine = false;
+if($key){
+    unset($argv[$key]);
+    $noCoroutine = true;
+}
+$_SERVER['argv'] = $argv;
+Runner::run($noCoroutine);
