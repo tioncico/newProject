@@ -20,7 +20,7 @@ use UnitTest\BaseTest;
  */
 class UserBaseTestCase extends BaseTest
 {
-    protected $apiBase = '/Api/User';
+    protected $apiBase = '/Api/';
     /**
      * @var $userBean UserModel
      */
